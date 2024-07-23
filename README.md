@@ -1,48 +1,153 @@
-# Academic Project Page Template
-This is an academic paper project page template.
+<div  align="center">
 
+# MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+[![arXiv](https://img.shields.io/badge/arXiv-0000.0000-<COLOR>.svg)]() 
+[![DOI](https://zenodo.org/badge/DOI/00.0000/zenodo.10072001.svg)]() 
+[![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-yellow)](https://huggingface.co/datasets/mulab-mir/muchomusic)
 
-Example project pages built using this template are:
-- https://vision.huji.ac.il/spectral_detuning/
-- https://vision.huji.ac.il/podd/
-- https://dreamix-video-editing.github.io
-- https://vision.huji.ac.il/conffusion/
-- https://vision.huji.ac.il/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad/
-- https://vision.huji.ac.il/deepsim/
+[Benno Weck](https://www.upf.edu/web/mtg/about/team-members/-/asset_publisher/l2XuyhfmWvQ5/content/weck-benno/maximized)\*<sup>1</sup>, 
+[Ilaria Manco](https://ilariamanco.com/)\*<sup>2,3</sup>,
+[Emmanouil Benetos](http://www.eecs.qmul.ac.uk/~emmanouilb/)<sup>2</sup>,
+[Elio Quinton](https://scholar.google.com/citations?user=IaciybgAAAAJ)<sup>3</sup>,
+[George Fazekas](http://www.eecs.qmul.ac.uk/~gyorgyf/about.html)<sup>2</sup>,
+[Dmitry Bogdanov](https://dbogdanov.com/)<sup>1</sup>
 
+<sup>1</sup> UPF, <sup>2</sup>  QMUL, <sup>3</sup> UMG
 
+</div>
+* equal contribution
 
-## Start using the template
-To start using the template click on `Use this Template`.
+This repository contains code and data for the paper MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models (ISMIR 2024).
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+[TODO]
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+## Quick Links
+- [Data](#data)
+- [Datasheet](docs/datasheet.md)
+- [Code Structure](#code-structure)
+- [Run Evaluation](#run-evaluation)
+- [Citation](#citation)
+- [Contact](#contact)
 
-## Components
-- Teaser video
-- Images Carousel
-- Youtube embedding
-- Video Carousel
-- PDF Poster
-- Bibtex citation
+## Data
+The dataset is available to download from [Zenodo]():
 
-## Tips:
-- The `index.html` file contains comments instructing you what to replace, you should follow these comments.
-- The `meta` tags in the `index.html` file are used to provide metadata about your paper 
-(e.g. helping search engine index the website, showing a preview image when sharing the website, etc.)
-- The resolution of images and videos can usually be around 1920-2048, there rarely a need for better resolution that take longer to load. 
-- All the images and videos you use should be compressed to allow for fast loading of the website (and thus better indexing by search engines). For images, you can use [TinyPNG](https://tinypng.com), for videos you can need to find the tradeoff between size and quality.
-- When using large video files (larger than 10MB), it's better to use youtube for hosting the video as serving the video from the website can take time.
-- Using a tracker can help you analyze the traffic and see where users came from. [statcounter](https://statcounter.com) is a free, easy to use tracker that takes under 5 minutes to set up. 
-- This project page can also be made into a github pages website.
-- Replace the favicon to one of your choosing (the default one is of the Hebrew University). 
-- Suggestions, improvements and comments are welcome, simply open an issue or contact me. You can find my contact information at [https://pages.cs.huji.ac.il/eliahu-horwitz/](https://pages.cs.huji.ac.il/eliahu-horwitz/)
+```bash
+wget -P data 
+```
 
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
+or via [HuggingFace Datasets](https://huggingface.co/datasets/mulab-mir/muchomusic). You can access it using the 🤗 Datasets library:
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+```python
+from datasets import load_dataset
+MuchoMusic = load_dataset("mulab-mir/muchomusic")
+```
+
+## Code setup
+To use this code, we recommend creating a new python3 virtual environment:
+
+```bash
+python -m venv venv 
+source venv/bin/activate
+```
+
+Then, clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/mulab-mir/muchomusic.git
+cd muchomusic
+pip install -r requirements.txt
+```
+
+This codebase has been tested with Python 3.11.5.
+
+## Code Structure
+
+```
+muchomusic
+├── data            
+│   ├── musiccaps
+│   │   ├── musiccaps-public.csv
+│   │   └── audio
+│   ├── sdd
+│   │   ├── song_describer.csv
+│   │   └── audio
+│   └── muchomusic.csv
+├── dataset                         # folder with the code to generate and validate the dataset
+│   ├── 
+│   ├── 
+|   └── ...  
+├── muchomusic_eval    
+│   ├── configs                     # folder to store the config files for evaluation experiments
+|   └── ...    
+├── evaluate.py                     # run file to run the evaluation
+└── prepare_prompts.py
+```
+
+## Prepare the model outputs for benchmark
+
+Inputs to the benchmark should be given as a JSON object with the following format:
+
+```json
+{
+    "id": 415600,
+    "prompt": "Question: What rhythm pattern do the digital drums follow? Options: (A) Four on the floor. (B) Off-beat syncopation. (C) Scat singing. (D) E-guitar playing a  simple melody. The correct answer is: ",
+    "answers": [
+        "Pop music",
+        "Reggae",
+        "Latin rock",
+        "Ska"
+    ],
+    "answer_orders": [
+        3,
+        0,
+        2,
+        1
+    ],
+    "dataset": "sdd",
+    "genre": "Reggae",
+    "reasoning": [
+        "genre and style"
+    ],
+    "knowledge": [],
+    "audio_path": "data/sdd/audio/00/415600.2min.mp3",
+    "model_output": "A"
+}
+```
+To generate this, first run:
+
+```bash
+python prepare_prompts.py --output_path <path_to_json_file>
+```
+
+Then obtain the model predictions from each (audio, text) pair formed by `prompt` and the corresponding audio at `audio_path`, and populate `model_output` accordingly.
+
+## Run the evaluation
+
+```bash
+python evaluate.py --output_dir <path_to_results_dir>
+```
+
+After running the code, the results will be stored in `<path_to_results_dir>`.
+
+## Citation
+
+If you use the code in this repo, please consider citing our work:
+
+```bibtex
+@inproceedings{weck2024muchomusic,
+   title={MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models},
+   author={Weck, Benno and Manco, Ilaria and Benetos, Emmanouil and Quinton, Elio and Fazekas, György and Bogdanov, Dmitry},
+   booktitle = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+   year={2024}
+}
+```
+
+## License
+This repository is released under the MIT License. Please see the [LICENSE](LICENSE) file for more details. The dataset is released under the [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## Contact
+If you have any questions, please get in touch: [benno.weck01@estudiant.upf.edu](benno.weck01@estudiant.upf.edu), [i.manco@qmul.ac.uk](i.manco@qmul.ac.uk).
+
+If you find a problem when using the code, you can also open an issue.

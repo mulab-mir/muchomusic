@@ -1,0 +1,6 @@
+in_context_examples:
+  - "Question: What rhythm pattern do the digital drums primarily follow in this pop music piece? \n
+    Options: (A) Four on the floor. (B) Off-beat syncopation. (C) Scat singing. (D) E-guitar playing a simple melody. \n
+    The correct answer is: A"
+distractors:
+  ["incorrect_but_related", "correct_but_unrelated", "incorrect_and_unrelated"]
