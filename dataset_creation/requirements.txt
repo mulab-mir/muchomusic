@@ -1,0 +1,16 @@
+notebook
+openai
+pandas
+psycopg2-binary
+python-dotenv
+requests
+requests-html
+SQLAlchemy
+sqlmodel
+streamlit~=1.32.2
+tqdm
+seaborn
+google-cloud-aiplatform
+matplotlib
+ipython
+plotly
