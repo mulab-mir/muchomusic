@@ -3,7 +3,7 @@
 # MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 [![arXiv](https://img.shields.io/badge/arXiv-0000.0000-<COLOR>.svg)]() 
-[![DOI](https://zenodo.org/badge/DOI/00.0000/zenodo.10072001.svg)]() 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12709974.svg)](https://doi.org/10.5281/zenodo.12709974)
 [![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-yellow)](https://huggingface.co/datasets/mulab-mir/muchomusic)
 
 [Benno Weck](https://www.upf.edu/web/mtg/about/team-members/-/asset_publisher/l2XuyhfmWvQ5/content/weck-benno/maximized)\*<sup>1</sup>, 
@@ -31,10 +31,10 @@ This repository contains code and data for the paper MuChoMusic: Evaluating Musi
 - [Contact](#contact)
 
 ## Data
-The dataset is available to download from [Zenodo]():
+The dataset is available to download from [Zenodo](https://doi.org/10.5281/zenodo.12709974):
 
 ```bash
-wget -P data 
+wget -P data https://zenodo.org/record/12709974/files/muchomusic.csv
 ```
 
 or via [HuggingFace Datasets](https://huggingface.co/datasets/mulab-mir/muchomusic). You can access it using the 🤗 Datasets library:
@@ -148,6 +148,6 @@ If you use the code in this repo, please consider citing our work:
 This repository is released under the MIT License. Please see the [LICENSE](LICENSE) file for more details. The dataset is released under the [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Contact
-If you have any questions, please get in touch: [benno.weck01@estudiant.upf.edu](benno.weck01@estudiant.upf.edu), [i.manco@qmul.ac.uk](i.manco@qmul.ac.uk).
+If you have any questions, please get in touch: [benno.weck01@estudiant.upf.edu](mailto:benno.weck01@estudiant.upf.edu), [i.manco@qmul.ac.uk](mailto:i.manco@qmul.ac.uk).
 
 If you find a problem when using the code, you can also open an issue.
