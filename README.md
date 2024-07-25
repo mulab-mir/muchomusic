@@ -65,20 +65,11 @@ This codebase has been tested with Python 3.11.5.
 ## Code Structure
 
 ```
-muchomusic
+muchomusic         
 ├── data            
-│   ├── musiccaps
-│   │   ├── musiccaps-public.csv
-│   │   └── audio
-│   ├── sdd
-│   │   ├── song_describer.csv
-│   │   └── audio
 │   └── muchomusic.csv
-├── dataset                         # folder with the code to generate and validate the dataset
-│   ├── 
-│   ├── 
-|   └── ...  
-├── muchomusic_eval    
+├── dataset_creation                # code to generate and validate the dataset
+├── muchomusic_eval                 # evaluation code
 │   ├── configs                     # folder to store the config files for evaluation experiments
 |   └── ...    
 ├── evaluate.py                     # run file to run the evaluation
