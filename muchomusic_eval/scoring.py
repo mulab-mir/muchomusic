@@ -38,8 +38,6 @@ def extract_responses(
 
 def compare_answers(responses, answer_orders):
     """Compare model answers to ground truth."""
-    # TODO
-    # responses_idx = [options.index(i) for i in responses if i in options else "Wrong"]
     num_correct = 0
     for a, b in zip(responses, answer_orders):
         if a == b.index(0):
