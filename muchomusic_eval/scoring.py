@@ -47,7 +47,7 @@ def compare_answers(responses, answer_orders):
         "total_questions": len(responses),
         "correct": num_correct,
         "accuracy": num_correct / len(responses),
-        "unanswers": num_unanswered,
+        "unanswered": num_unanswered,
         "unanswered_rate": num_unanswered / len(responses),
     }
 
