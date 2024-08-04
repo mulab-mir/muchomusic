@@ -27,9 +27,9 @@ def extract_responses(
         else:
             normalized_output = output.lower().strip()
             normalized_answers = [j.lower().strip() for j in answer_options[i]]
-            for i, answer in enumerate(normalized_answers):
+            for j, answer in enumerate(normalized_answers):
                 if answer in normalized_output:
-                    responses.append(i)
+                    responses.append(j)
                     break
             else:
                 responses.append(-1)
