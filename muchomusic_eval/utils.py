@@ -30,7 +30,7 @@ def get_all_audio_paths(audio_ids, datasets):
     return audio_paths
 
 
-def get_audio_path_from_id(audio_id, df, dataset="sdd"):
+def get_audio_path_from_id(audio_id, dataset="sdd"):
     if dataset == "sdd":
         path_to_dataset = os.path.join("data", "sdd")
         df = pd.read_csv(os.path.join(path_to_dataset, "song_describer.csv"))
