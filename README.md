@@ -2,7 +2,7 @@
 
 # MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
-[![arXiv](https://img.shields.io/badge/arXiv-0000.0000-<COLOR>.svg)]() 
+[![arXiv](https://img.shields.io/badge/arXiv-2408.01337-b31b1b.svg)](https://arxiv.org/abs/2408.01337) 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12709974.svg)](https://doi.org/10.5281/zenodo.12709974)
 [![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-yellow)](https://huggingface.co/datasets/mulab-mir/muchomusic)
 
