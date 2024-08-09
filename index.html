@@ -190,10 +190,11 @@
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-                <h2 class="title is-3">Dataset Construction</h2>
+                <h2 class="title is-3">Dataset</h2>
                 <div class="content has-text-justified">
                     <p>
-                        [TODO]
+                        <span class="dnerf">MuChoMusic</span> includes 1,187 carefully crafted multiple-choice questions tied to 644 music tracks sourced from MusicCaps and the Song Describer Dataset (SDD).
+                        These tracks were chosen for their diverse genres and high-quality recordings, ensuring consistent and reliable evaluation of audio-language models.
                     </p>
                     <!-- side by side images-->
                     <div class="columns is-centered">
@@ -202,12 +203,19 @@
                              width="60%" height="100%" class="center"/>
                     </div>
                     <p>
-                        [TODO]
+                        We generated the questions using a Large Language Model, Gemini 1.0 Pro,
+                        which transformed detailed human-written music captions into challenging multiple-choice questions.
+                        Each question includes one correct answer and three carefully designed distractors that test different aspects of music comprehension.
+                        To ensure the dataset’s accuracy, every question was rigorously validated by human annotators, who filtered out any ambiguous or incorrect options.
                     </p>
                     <div class="columns is-centered">
                         <img src="./static/images/eval_dims.png" alt="Evaluation dimensions" class="teaser-image"
                              width="60%" height="100%" class="center"/>
                     </div>
+                    <p>
+                        <span class="dnerf">MuChoMusic</span> uses a structured taxonomy to automatically categorise questions into knowledge and reasoning dimensions.
+                        This process spans a diverse range of musical concepts &mdash; from melody and rhythm to mood, genre, and cultural context &mdash; providing a broad framework for evaluating music comprehension in audio-language models.
+                    </p>
                 </div>
             </div>
         </div>
