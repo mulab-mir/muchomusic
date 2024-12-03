@@ -27,9 +27,9 @@ def extract_responses(
         else:
             normalized_output = output.lower().strip()
             normalized_answers = [j.lower().strip() for j in answer_options[i]]
-            for i, answer in enumerate(normalized_answers):
+            for j, answer in enumerate(normalized_answers):
                 if answer in normalized_output:
-                    responses.append(i)
+                    responses.append(j)
                     break
             else:
                 responses.append(-1)
@@ -47,7 +47,7 @@ def compare_answers(responses, answer_orders):
         "total_questions": len(responses),
         "correct": num_correct,
         "accuracy": num_correct / len(responses),
-        "unanswers": num_unanswered,
+        "unanswered": num_unanswered,
         "unanswered_rate": num_unanswered / len(responses),
     }
 

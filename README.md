@@ -24,9 +24,9 @@ This repository contains code and data for the paper MuChoMusic: Evaluating Musi
 
 ## Quick Links
 - [Data](#data)
-- [Datasheet](docs/datasheet.md)
+- [Datasheet](https://zenodo.org/records/12709974/files/datasheet.pdf?download=1)
 - [Code Structure](#code-structure)
-- [Run Evaluation](#run-evaluation)
+- [Run Evaluation](#run-the-evaluation)
 - [Citation](#citation)
 - [Contact](#contact)
 
