@@ -82,7 +82,7 @@ if __name__ == "__main__":
 
     results = {
         "accuracy": scores["accuracy"],
-        "IFR": scores["accuracy"],
+        "IFR": 1.0 - scores["unanswered_rate"],
         "knowledge": {
             "overall": knowledge_scores["accuracy"],
             "finegrained": {
